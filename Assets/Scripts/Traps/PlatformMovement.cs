@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class PlatformMovement : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField]Transform[] pointsToMove;
+    [SerializeField] float speed;
+    int index;
 
-    // Update is called once per frame
     void Update()
     {
-        
+        transform.position = Vector2.MoveTowards(transform.position, pointsToMove[index].position, speed * Time.deltaTime);
+        if (Vector2.Distance(transform.position, pointsToMove[index].position) <= 0.01f)
+        {
+            index++;
+            if (index == pointsToMove.Length)
+            {
+                index = 0;
+            }
+        }
     }
 }
