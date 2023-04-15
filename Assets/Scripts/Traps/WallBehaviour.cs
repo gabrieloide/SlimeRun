@@ -6,9 +6,14 @@ public class WallBehaviour : MonoBehaviour
 {
     [SerializeField] float timeToAppear;
     Vector2 target;
+    Rigidbody2D rb;
     private float timeToDisappear;
     private float _timeToAppear;
 
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
     private void Start()
     {
         _timeToAppear = timeToAppear;

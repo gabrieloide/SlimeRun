@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpikesBehaviour : MonoBehaviour
 {
     SpriteRenderer spikeSpriteRenderer;
-
+    [SerializeField]Sprite withSpikes, withoutSpikes; 
     [SerializeField] float timeToAppear;
     float _timeToAppear, timeToDisappear;
     void Start()
@@ -25,7 +25,8 @@ public class SpikesBehaviour : MonoBehaviour
         {
             timeToAppear = 0;
             //Cambiar sprite al que no tiene espinas
-            spikeSpriteRenderer.color = Color.red;
+            spikeSpriteRenderer.sprite = withoutSpikes; 
+
             timeToDisappear -= Time.deltaTime;
 
 
@@ -33,7 +34,7 @@ public class SpikesBehaviour : MonoBehaviour
             {
                 timeToDisappear = 0;
                 //Cambiar sprite al que tiene espinas
-                spikeSpriteRenderer.color = Color.white;
+                spikeSpriteRenderer.sprite = withSpikes;
                 timeToAppear = _timeToAppear;
                 timeToDisappear = _timeToAppear;
             }
