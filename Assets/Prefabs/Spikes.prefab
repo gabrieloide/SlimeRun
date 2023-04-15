@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8937767912577721619}
   - component: {fileID: 886718540464236420}
   - component: {fileID: 8573316299363313114}
+  - component: {fileID: 4936975297399992810}
   m_Layer: 0
   m_Name: Spikes
   m_TagString: Enemy
@@ -111,3 +112,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 665573558e7c4804faa5f7cc815923ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4936975297399992810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8937767912577721628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0278986f328a444dab38660fe059cf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointsToMove: []
+  speed: 0

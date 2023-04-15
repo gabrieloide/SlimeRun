@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class HurtPlayer : MonoBehaviour
 {
-    string Enemy = "Player";
+    string Enemy = "Enemy";
+    public bool wasHit;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag(Enemy))
         {
-            Debug.Log("Se muere");
+            wasHit = true;
         }
     }
 }

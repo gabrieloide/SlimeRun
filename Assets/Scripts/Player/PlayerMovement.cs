@@ -4,21 +4,26 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] Vector2 target;
     Rigidbody2D rb;
+    Animator animator;
+    string Jump = "Jump";
     public float Speed;
-    [SerializeField] float timeToNextStep;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !GetComponent<HurtPlayer>().wasHit)
         {
-            //StartCoroutine(Movement());
-            rb.velocity = Vector2.zero;
-            rb.AddForce(Vector2.up * Speed, ForceMode2D.Impulse);
+            Jumping();
         }
+    }
+    public void Jumping()
+    {
+        animator.SetTrigger(Jump);
+        rb.velocity = Vector2.zero;
+        rb.AddForce(Vector2.up * Speed, ForceMode2D.Impulse);
     }
 }
