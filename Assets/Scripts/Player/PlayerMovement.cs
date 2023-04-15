@@ -5,27 +5,20 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] Vector2 target;
-    [SerializeField] float Speed;
+    Rigidbody2D rb;
+    public float Speed;
     [SerializeField] float timeToNextStep;
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            StartCoroutine(Movement());
-        }
-    }
-    IEnumerator Movement()
-    {
-        transform.position = Vector2.MoveTowards(transform.position, target, Speed * Time.deltaTime);
-        yield return new WaitForSeconds(timeToNextStep);
-        UpdateTarget();
-    }
-    void UpdateTarget()
-    {
-        float distanceTarget = Vector2.Distance(transform.position, target);
-        if (distanceTarget <= 0.01f)
-        {
-            target = new Vector2(target.x, target.y + 1);
+            //StartCoroutine(Movement());
+            rb.velocity = Vector2.zero;
+            rb.AddForce(Vector2.up * Speed, ForceMode2D.Impulse);
         }
     }
 }
