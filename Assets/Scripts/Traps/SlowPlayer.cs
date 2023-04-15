@@ -8,7 +8,7 @@ public class SlowPlayer : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            collision.GetComponent<PlayerMovement>().Speed *= 0.75f;
+            collision.GetComponent<PlayerMovement>().Speed *= 0.55f;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
