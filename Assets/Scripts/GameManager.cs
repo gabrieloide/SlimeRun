@@ -1,13 +1,20 @@
 using System.Collections;
 using UnityEngine.Networking;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     HurtPlayer hurtPlayer;
     public float PathTraveled;
+    [SerializeField] Transform playerTransform;
+    public int currentY() => Mathf.FloorToInt(playerTransform.position.y);
     public GameObject GameOverScreen;
+
+    public string username;
+    [HideInInspector] public int scoreP;
+    public bool canUpdate = false;
     private void Awake()
     {
         hurtPlayer = FindObjectOfType<HurtPlayer>();
@@ -29,9 +36,4 @@ public class GameManager : MonoBehaviour
     }
 
 }
-[System.Serializable]
-public class ScoreEntry
-{
-    public string username;
-    public int score;
-}
+
