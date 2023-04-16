@@ -1,5 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
+using UnityEngine.Networking;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -27,4 +27,11 @@ public class GameManager : MonoBehaviour
             GameOverScreen.SetActive(true);
         }
     }
+
+}
+[System.Serializable]
+public class ScoreEntry
+{
+    public string username;
+    public int score;
 }

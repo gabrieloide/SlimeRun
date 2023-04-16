@@ -1,18 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ChangeScene : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject showLeadership;
+    public void changeScene()
     {
-        
+        SceneManager.LoadScene("SampleScene");
     }
-
-    // Update is called once per frame
-    void Update()
+    void showladerShip()
     {
-        
+        showLeadership.SetActive(false);
     }
 }
