@@ -66,3 +66,12 @@ Para ejecutar el servidor Flask dentro del entorno virtual, sigue los mismos pas
    ```bash
    python src/app.py
    ```
+
+
+Para descargar el juego, por favor visite la página de itch.io en el siguiente enlace:
+
+[https://virterex.itch.io/slimerun](https://virterex.itch.io/slimerun)
+
+Una vez en la página de itch.io, descargue el archivo .rar del juego y ábralo en su computadora. Para ejecutar el juego, busque el archivo de aplicación y haga doble clic en él.
+
+¡Disfrute del juego!
