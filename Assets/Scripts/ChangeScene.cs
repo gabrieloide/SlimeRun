@@ -10,7 +10,11 @@ public class ChangeScene : MonoBehaviour
     {
         SceneManager.LoadScene("SampleScene");
     }
-    void showladerShip()
+    public void showladerShip()
+    {
+        showLeadership.SetActive(true);
+    }
+    public void UnShowladerShip()
     {
         showLeadership.SetActive(false);
     }
